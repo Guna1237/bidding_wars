@@ -606,7 +606,7 @@ def main():
                         k1.metric("Growth Range", f"{row['cagr_min']*100:.0f}% - {row['cagr_max']*100:.0f}%")
                         k2.metric("Lock-in Period", f"{row['lock_years']} Years")
                         k3.metric("Max Alloc", f"{row['max_allocation']*100:.0f}%")
-                        k4.metric("Recovery", row['recovery_profile'])
+                        
 
             elif phase == 'AUCTION':
                 st.subheader("🔨 Primary Auction Market")
@@ -716,3 +716,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
