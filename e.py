@@ -598,7 +598,7 @@ def main():
 
             if phase == 'BRIEFING' or phase == 'PRE_GAME':
                 st.subheader("📁 Strategic Dossier")
-                assets = pd.read_sql("SELECT ticker, name, category, cagr_min, cagr_max, yield_rate, shock_beta, max_allocation, recovery_profile, description, lock_years FROM assets", conn)
+                assets = pd.read_sql("SELECT ticker, name, category, cagr_min, cagr_max, yield_rate, shock_beta, max_allocation, description, lock_years FROM assets", conn)
                 for i, row in assets.iterrows():
                     with st.expander(f"📄 {row['name']} ({row['ticker']})"):
                         st.markdown(f"*{row['description']}*")
@@ -714,4 +714,5 @@ def main():
             if c2.button("Reset"): conn.execute("UPDATE config SET value='0' WHERE key='reveal_rank'"); conn.commit()
 
 if __name__ == "__main__":
+
     main()
